@@ -1,6 +1,7 @@
 import { useState } from "react";
 import heroVideo from "../../../assets/Videohereo.mp4";
 
+
 export default function HeroSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -32,7 +33,7 @@ export default function HeroSection() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         className="absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
       >
