@@ -5,7 +5,12 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  cursor: none; /* hide default cursor when custom cursor is active */
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: none; /* hide default cursor when custom cursor is active on desktop */
+  }
 }
 
 /* ── Custom Cursor ───────────────────────── */
@@ -38,6 +43,14 @@ body {
 .cursor-ring.hovering {
   width: 60px; height: 60px;
   border-color: rgba(255,255,255,0.9);
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
 }
 
 /* ── Scroll Progress Bar ─────────────────── */
