@@ -1,5 +1,5 @@
 import { useState } from "react";
-import hereoVideo from "../../../assets/hereoVideo.mov";
+import heroVideo from "../../../assets/Videohereo.mp4";
 
 export default function HeroSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,8 +36,7 @@ export default function HeroSection() {
         className="absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
       >
-        <source src={hereoVideo} type="video/mp4" />
-        <source src={hereoVideo} type="video/quicktime" />
+        <source src={heroVideo} type="video/mp4" />
       </video>
 
       {/* Dark Overlay */}
