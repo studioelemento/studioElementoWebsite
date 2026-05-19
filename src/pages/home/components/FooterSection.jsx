@@ -1,82 +1,100 @@
+const socials = [
+  { label: "Instagram", href: "#", icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-5 h-5" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  )},
+  { label: "LinkedIn", href: "#", icon: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>
+  )},
+  { label: "YouTube", href: "#", icon: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+    </svg>
+  )},
+  { label: "Facebook", href: "#", icon: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+    </svg>
+  )},
+];
+
+const cities = ["SALZBURG", "SHANGHAI", "MURRIETA", "MUNICH"];
+
 export default function FooterSection() {
   return (
-    <section className="relative  bg-black text-white overflow-hidden flex flex-col justify-between">
-      {/* Main Content */}
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-24 px-6 py-28 lg:grid-cols-2 lg:px-16">
-        {/* Left */}
-        <div>
-          <h1 className="text-5xl font-bold leading-none md:text-5xl">
-            Get in touch.
-          </h1>
+    <footer className="bg-black text-white" aria-label="Site footer">
+
+      {/* Top content */}
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-20 px-6 py-28 lg:grid-cols-2 lg:px-16">
+        <div className="reveal-left">
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tight">Get in touch.</h2>
         </div>
 
-        {/* Right */}
-        <div className="max-w-xl">
-          <h2 className="mb-8 text-4xl font-bold md:text-4xl">
-            Let’s work together.
-          </h2>
-
-          <p className="mb-10 text-lg leading-relaxed text-gray-200 md:text-lg">
-            Boost your business with brand and design.
-            <br />
-            You talk. We listen.
+        <div className="reveal-right max-w-xl">
+          <h3 className="mb-6 text-3xl font-bold">Let's work together.</h3>
+          <p className="mb-4 text-base font-medium leading-relaxed text-gray-200">
+            Boost your business with brand and design.<br />You talk. We listen.
           </p>
+          <p className="mb-16 text-base font-medium text-gray-200">Contact one of our offices worldwide.</p>
 
-          <p className="mb-16 text-lg text-gray-200 md:text-lg">
-            Contact one of our offices worldwide.
-          </p>
-
-          {/* Locations */}
-          <div className="grid grid-cols-2 gap-x-14 gap-y-10 md:grid-cols-3">
-            {["SALZBURG", "SHANGHAI", "MURRIETA", "MUNICH"].map((city) => (
+          <div className="flex flex-wrap gap-x-12 gap-y-10">
+            {cities.map((city) => (
               <a
                 key={city}
-                href="/"
-                className="group relative w-fit text-lg font-bold tracking-wide md:text-lg"
+                href="#"
+                aria-label={`Contact our ${city} office`}
+                className="group relative w-fit text-sm font-black tracking-widest uppercase text-white pb-2 border-b-[3px] border-white hover:text-neutral-300 hover:border-neutral-300 transition-colors"
               >
                 {city}
-
-                <span className="absolute left-0 -bottom-2 h-[3px] w-full bg-white transition-all duration-300 group-hover:w-2/3" />
               </a>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Vertical Button
-      <button className="fixed right-0 top-1/2 -translate-y-1/2 bg-lime-300 px-4 py-8 text-xl font-bold text-black writing-vertical">
-        Talk to us
-      </button> */}
-
-      {/* Footer */}
-      <footer className="flex h-50 relative flex-col items-start justify-between gap-8 border-t border-white/10 px-6 py-8 lg:flex-row lg:items-center lg:px-16">
-        <img
-        className="absolute top-0 right-0 z-0 object-contain w-full   "
+      {/* Bottom bar with background image */}
+      <div className="relative border-t border-white/10 mt-10">
+        <img 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop" 
+          alt="Office background" 
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
         
-          loading="lazy"
-          src="https://kiska.com/wp-content/themes/kiska/images/footer-hq.jpg"
-          alt="Kiska HQ Austria"
-        />{" "}
-        <div className="z-1 flex w-full justify-between">
-        {/* Socials */}
-        <div className="flex items-center gap-6 text-2xl">
-          <span>◎</span>
-          <span>f</span>
-          <span>▶</span>
-          <span>v</span>
-          <span>in</span>
-          <span>p</span>
+        <div className="relative z-10 px-6 py-10 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 mt-20 md:mt-32">
+          {/* Socials */}
+          <div className="flex items-center gap-6 w-full md:w-auto justify-center md:justify-start">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                aria-label={`Studio Elemento on ${s.label}`}
+                className="text-gray-400 hover:text-white transition"
+              >
+                {s.icon}
+              </a>
+            ))}
+          </div>
+
+          {/* Legal links */}
+          <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-gray-400">
+            <a href="/terms" className="hover:text-white transition">Terms & Conditions</a>
+            <span className="text-gray-600">|</span>
+            <a href="/imprint" className="hover:text-white transition">Imprint</a>
+            <span className="text-gray-600">|</span>
+            <a href="/privacy" className="hover:text-white transition">Privacy</a>
+            <span className="text-gray-600">|</span>
+            <span className="text-gray-400">© {new Date().getFullYear()} Studio Elemento</span>
+          </nav>
         </div>
-        {/* Links */}
-        <div className="flex flex-wrap gap-6 text-sm text-gray-400">
-          <a href="/">Terms & Conditions</a>
-          <a href="/">Imprint</a>
-          <a href="/">Privacy</a>
-        </div>
-        {/* Copyright */}
-        <div className="text-sm text-gray-500">© 2026 KISKA</div>
-        </div>
-      </footer>
-    </section>
+      </div>
+    </footer>
   );
 }

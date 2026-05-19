@@ -6,17 +6,20 @@ import ContactSection from "./components/ContactSection";
 import ExchangeSection from "./components/ExchangeSection";
 import LatestNewsSection from "./components/LatestNewsSection";
 import FooterSection from "./components/FooterSection";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const Home = () => {
+  useScrollReveal();
+
   return (
     <>
       <HeroSection />
       <AgencyIntroSection />
-      <WorkGridSection/>
-      <ContactSection/>
-      <ExchangeSection/>
-      <LatestNewsSection></LatestNewsSection> 
-      <FooterSection/>
+      <WorkGridSection />
+      <ContactSection />
+      <ExchangeSection />
+      <LatestNewsSection />
+      <FooterSection />
     </>
   );
 };

@@ -1,16 +1,16 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import "./App.css";
+import "./index.css";
 import Home from "./pages/home/Home";
+import CustomCursor from "./components/CustomCursor";
+import ScrollProgress from "./components/ScrollProgress";
+import GlobalFloatingCTA from "./components/GlobalFloatingCTA";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Home />{" "}
+      <CustomCursor />
+      <ScrollProgress />
+      <GlobalFloatingCTA />
+      <Home />
     </>
   );
 }
