@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #08d3a6;
+  --color-primary-hover: #06b890;
+}
 /* ── Global Font ─────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
