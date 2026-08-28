@@ -24,7 +24,7 @@ const socials = [
   )},
 ];
 
-const cities = ["SALZBURG", "SHANGHAI", "MURRIETA", "MUNICH"];
+const cities = ["TRIVANDRUM", "PUNE", "BANGALORE"];
 
 export default function FooterSection() {
   return (

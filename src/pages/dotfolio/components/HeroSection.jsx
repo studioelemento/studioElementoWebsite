@@ -1,21 +1,6 @@
-import { useState } from "react";
 import heroVideo from "../../../assets/Videohereo.mp4";
 
-
 export default function HeroSection() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { label: "Work",      href: "#work" },
-    { label: "Services",  href: "#services" },
-    { label: "Exchange",  href: "#exchange" },
-    { label: "Culture",   href: "#culture" },
-    { label: "About Us",  href: "#about" },
-    { label: "News",      href: "#news" },
-    { label: "Careers",   href: "#careers" },
-    { label: "Contact",   href: "#contact" },
-  ];
-
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black text-white">
 
@@ -43,64 +28,7 @@ export default function HeroSection() {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
 
-      {/* Navbar — logo left | nav + lang grouped right */}
-      <header className="absolute top-0 left-0 z-50 w-full flex items-center justify-between px-6 py-6 md:px-10 md:py-7">
-
-        {/* Logo — left */}
-        <a href="/" className="text-4xl md:text-5xl font-black tracking-wider text-white" aria-label="Studio Elemento — Home">
-          SE<span className="text-[#d9ef57]">.</span>
-        </a>
-
-        {/* Nav + Language — right side */}
-        <div className="hidden md:flex items-center gap-10">
-
-          {/* Navigation */}
-          <nav aria-label="Main navigation" className="flex items-center gap-8 text-sm font-medium text-white/85">
-            {navLinks.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="hover:text-white transition-colors duration-200"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          className="flex flex-col gap-1.5 md:hidden z-50 relative w-8 h-8 justify-center items-end"
-          aria-label={isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span className={`block h-0.5 transition-all duration-300 ease-out ${isMobileMenuOpen ? "w-8 rotate-45 translate-y-2 bg-black" : "w-8 bg-white"}`} />
-          <span className={`block h-0.5 transition-all duration-300 ease-out ${isMobileMenuOpen ? "opacity-0 bg-black" : "w-8 bg-white"}`} />
-          <span className={`block h-0.5 transition-all duration-300 ease-out ${isMobileMenuOpen ? "w-8 -rotate-45 -translate-y-2 bg-black" : "w-6 bg-white"}`} />
-        </button>
-      </header>
-
-      {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 bg-white z-40 flex flex-col justify-center px-8 transition-transform duration-500 ease-in-out md:hidden ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <nav className="flex flex-col gap-6" aria-label="Mobile navigation">
-          {navLinks.map((item, index) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`text-4xl font-black text-black transition-all duration-500 delay-${index * 100} hover:text-neutral-500 ${isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-
+      {/* Navigation is now handled by the global Navbar component */}
       {/* Hero Content */}
       <main id="main-content" className="relative z-10 flex h-full items-center">
         <div className="mx-auto w-full max-w-7xl px-8">

@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar';
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col selection:bg-primary selection:text-white" style={{ fontFamily: "'Outfit', sans-serif" }}>
+    <div className="min-h-screen bg-white text-black flex flex-col selection:bg-primary selection:text-white">
       <Navbar />
 
       {/* Main Content */}

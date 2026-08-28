@@ -3,25 +3,34 @@
 @theme {
   --color-primary: #08d3a6;
   --color-primary-hover: #06b890;
+  --font-sans: 'Roboto', sans-serif;
 }
+
 /* ── Global Font ─────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media (pointer: fine) {
   body {
-    cursor: none; /* hide default cursor when custom cursor is active on desktop */
+    cursor: none;
+    /* hide default cursor when custom cursor is active on desktop */
   }
 }
 
 /* ── Custom Cursor ───────────────────────── */
 .cursor-dot {
   position: fixed;
-  top: 0; left: 0;
-  width: 10px; height: 10px;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
   background: #fff;
   border-radius: 50%;
   pointer-events: none;
@@ -33,9 +42,11 @@ body {
 
 .cursor-ring {
   position: fixed;
-  top: 0; left: 0;
-  width: 36px; height: 36px;
-  border: 1.5px solid rgba(255,255,255,0.6);
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -45,12 +56,14 @@ body {
 }
 
 .cursor-ring.hovering {
-  width: 60px; height: 60px;
-  border-color: rgba(255,255,255,0.9);
+  width: 60px;
+  height: 60px;
+  border-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Hide custom cursor on touch devices */
 @media (pointer: coarse) {
+
   .cursor-dot,
   .cursor-ring {
     display: none !important;
@@ -60,7 +73,8 @@ body {
 /* ── Scroll Progress Bar ─────────────────── */
 .scroll-progress {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   height: 3px;
   background: #d9ef57;
   z-index: 9997;
@@ -102,11 +116,25 @@ body {
 }
 
 /* Stagger delays */
-.delay-100 { transition-delay: 0.1s; }
-.delay-200 { transition-delay: 0.2s; }
-.delay-300 { transition-delay: 0.3s; }
-.delay-400 { transition-delay: 0.4s; }
-.delay-500 { transition-delay: 0.5s; }
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-400 {
+  transition-delay: 0.4s;
+}
+
+.delay-500 {
+  transition-delay: 0.5s;
+}
 
 /* ── Vertical Text Utility ───────────────── */
 .writing-mode-vertical,
@@ -118,8 +146,13 @@ body {
 
 /* ── Marquee ─────────────────────────────── */
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-track {
@@ -136,7 +169,10 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

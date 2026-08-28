@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../../components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AgencyIntroSection from "./components/AgencyIntroSection";
 import WorkGridSection from "./components/WorkGridSection";
@@ -13,12 +14,13 @@ const DotFolio = () => {
 
   return (
     <>
+      <Navbar />
       <HeroSection />
       <AgencyIntroSection />
       <WorkGridSection />
       <ContactSection />
-      <ExchangeSection />
-      <LatestNewsSection />
+      {/* <ExchangeSection /> */}
+      {/* <LatestNewsSection /> */}
       <FooterSection />
     </>
   );

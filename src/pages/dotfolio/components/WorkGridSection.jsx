@@ -103,7 +103,7 @@ function Card({ project, featured }) {
   return (
     <a
       href="#"
-      className="group relative h-full overflow-hidden bg-black block"
+      className="group relative h-full overflow-hidden bg-black block rounded-2xl"
       aria-label={`View project: ${project.title} — ${project.brand}`}
     >
       <img
@@ -143,16 +143,16 @@ function Card({ project, featured }) {
 
 function WorkSection({ section }) {
   return (
-    <div className="flex flex-row md:grid md:grid-cols-2 min-h-[60vh] md:min-h-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar md:overflow-visible">
+    <div className="flex flex-row md:grid md:grid-cols-2 gap-4 md:gap-4 min-h-[60vh] md:min-h-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar md:overflow-visible">
       {/* Featured Card */}
-      <div className={`${section.reverse ? "md:order-2" : ""} flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto h-[60vh] md:h-[100vh] snap-center md:snap-align-none reveal-left pr-4 md:pr-0`}>
+      <div className={`${section.reverse ? "md:order-2" : ""} flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto h-[60vh] md:h-[100vh] snap-center md:snap-align-none reveal-left`}>
         <Card project={section.featured} featured />
       </div>
       
       {/* 4 Sub-Cards */}
-      <div className={`contents md:grid md:grid-cols-2 ${section.reverse ? "md:order-1" : ""}`}>
+      <div className={`contents md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4 md:h-[100vh] ${section.reverse ? "md:order-1" : ""}`}>
         {section.items.map((item, index) => (
-          <div key={index} className={`flex-shrink-0 w-[85vw] sm:w-[50vw] md:w-auto h-[60vh] md:h-[50vh] snap-center md:snap-align-none pr-4 md:pr-0 reveal delay-${(index + 1) * 100}`}>
+          <div key={index} className={`flex-shrink-0 w-[85vw] sm:w-[50vw] md:w-auto h-[60vh] md:h-full snap-center md:snap-align-none reveal delay-${(index + 1) * 100}`}>
             <Card project={item} />
           </div>
         ))}
@@ -167,7 +167,7 @@ function WorkSection({ section }) {
 
 export default function AlternatingWorkGrid() {
   return (
-    <section id="work" className="relative bg-black" aria-label="Our work">
+    <section id="work" className="relative bg-white" aria-label="Our work">
       {/* Marquee strip */}
       <div className="overflow-hidden bg-[#d9ef57] py-4 text-black">
         <div className="marquee-track">
@@ -179,9 +179,11 @@ export default function AlternatingWorkGrid() {
         </div>
       </div>
 
-      {sections.map((section, index) => (
-        <WorkSection key={index} section={section} />
-      ))}
+      <div className="flex flex-col gap-4">
+        {sections.map((section, index) => (
+          <WorkSection key={index} section={section} />
+        ))}
+      </div>
     </section>
   );
 }
