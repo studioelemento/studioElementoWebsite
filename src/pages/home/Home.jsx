@@ -1,17 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
+import ParticleBackground from '../../components/ParticleBackground';
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col selection:bg-primary selection:text-white">
-      <Navbar />
+    <div className="min-h-screen bg-white text-black flex flex-col selection:bg-primary selection:text-white relative overflow-hidden">
+      
+      {/* 3D Particle Background */}
+      <ParticleBackground />
+      
+      {/* Navbar overlay (needs z-index) */}
+      <div className="relative z-50">
+        <Navbar />
+      </div>
 
       {/* Main Content */}
-      <main className="flex-1 w-full flex flex-col justify-center -mt-10">
+      <main className="flex-1 w-full flex flex-col justify-center -mt-10 relative z-10 pointer-events-none">
         
         {/* Top Block */}
-        <div className="w-full pl-8 pr-4 md:px-8 md:pl-[22%] lg:pl-[25%] mb-12 md:mb-[12vh] flex flex-col items-start text-left mt-8 md:mt-0">
+        <div className="w-full pl-8 pr-4 md:px-8 md:pl-[22%] lg:pl-[25%] mb-12 md:mb-[12vh] flex flex-col items-start text-left mt-8 md:mt-0 pointer-events-auto">
           <h1 className="text-[3.5rem] md:text-[3.5rem] leading-[1.0] md:leading-[1.05] text-black tracking-tight">
             <span className="font-extralight">studio</span>
             <br />
@@ -23,7 +31,7 @@ const Home = () => {
         </div>
 
         {/* Bottom Block */}
-        <div className="w-full pl-8 pr-4 md:px-8 md:pl-[22%] lg:pl-[25%] flex flex-col items-start text-left">
+        <div className="w-full pl-8 pr-4 md:px-8 md:pl-[22%] lg:pl-[25%] flex flex-col items-start text-left pointer-events-auto">
           
           <h2 className="text-[2.2rem] md:text-[2.85rem] leading-[1.15] md:leading-[1.25] font-extralight text-black tracking-tight mb-1 md:mb-0">
             {/* Desktop View */}
@@ -53,7 +61,7 @@ const Home = () => {
         </div>
 
         {/* Button Absolute Center */}
-        <div className="w-full flex justify-center mt-2 pb-16">
+        <div className="w-full flex justify-center mt-2 pb-16 pointer-events-auto">
           <Link 
             to="/thedotfolio"
             className="inline-block bg-primary text-black font-extrabold text-[18px] md:text-[18px] px-10 md:px-10 py-3 md:py-3 rounded-full hover:bg-primary-hover transition-colors tracking-wide"

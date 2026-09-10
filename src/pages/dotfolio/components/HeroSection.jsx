@@ -33,15 +33,20 @@ export default function HeroSection() {
       <main id="main-content" className="relative z-10 flex h-full items-center">
         <div className="mx-auto w-full max-w-7xl px-8">
           <div className="max-w-5xl">
-            <p className="reveal mb-6 text-xs font-bold uppercase tracking-[0.25em] text-[#d9ef57]">
-              Brand &amp; Design Agency
-            </p>
-            <h1 className="reveal delay-200 text-5xl font-black leading-none tracking-tight sm:text-7xl md:text-8xl">
-              We design brands that move people.
+            <h1 className="reveal delay-200 text-6xl font-black leading-none tracking-tight sm:text-7xl md:text-[6rem] lg:text-[8rem] lowercase text-white mb-2">
+              the dotfolio.
             </h1>
-            <p className="reveal delay-300 mt-8 max-w-xl text-lg text-white/70 leading-relaxed">
-              Strategy, identity, and digital experience — crafted for ambitious businesses.
-            </p>
+            <h2 className="reveal delay-300 text-2xl sm:text-3xl md:text-4xl font-normal text-white mb-12">
+              Our <span className="italic">client portfolio</span>
+            </h2>
+            <div className="reveal delay-500 mt-12">
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                Disclaimer:
+              </p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-medium text-white/90 leading-snug max-w-4xl">
+                The works you are going to see here were envisioned, conceptualised and developed for the <span className="italic text-primary">pioneers.</span>
+              </p>
+            </div>
           </div>
         </div>
       </main>

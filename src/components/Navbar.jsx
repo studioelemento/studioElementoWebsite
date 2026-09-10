@@ -16,7 +16,7 @@ const Navbar = () => {
           <Link to="/thedotfolio" className="hover:text-primary transition-colors" data-cursor-hover="true">.thedotfolio</Link>
           <Link to="/careers" className="hover:text-primary transition-colors" data-cursor-hover="true">.careers</Link>
           <Link to="/snaps" className="hover:text-primary transition-colors" data-cursor-hover="true">.snaps</Link>
-          <Link to="/discuss" className="hover:text-primary transition-colors" data-cursor-hover="true">.discuss</Link>
+          <Link to="/connect" className="hover:text-primary transition-colors" data-cursor-hover="true">.connect</Link>
         </nav>
 
         {/* Mobile Menu Icon (2-line animated X) */}
@@ -37,7 +37,7 @@ const Navbar = () => {
         <Link to="/thedotfolio" onClick={() => setIsOpen(false)} className="text-[2.25rem] font-bold tracking-tight text-black hover:text-primary transition-colors" data-cursor-hover="true">.thedotfolio</Link>
         <Link to="/careers" onClick={() => setIsOpen(false)} className="text-[2.25rem] font-bold tracking-tight text-black hover:text-primary transition-colors" data-cursor-hover="true">.careers</Link>
         <Link to="/snaps" onClick={() => setIsOpen(false)} className="text-[2.25rem] font-bold tracking-tight text-black hover:text-primary transition-colors" data-cursor-hover="true">.snaps</Link>
-        <Link to="/discuss" onClick={() => setIsOpen(false)} className="text-[2.25rem] font-bold tracking-tight text-black hover:text-primary transition-colors" data-cursor-hover="true">.discuss</Link>
+        <Link to="/connect" onClick={() => setIsOpen(false)} className="text-[2.25rem] font-bold tracking-tight text-black hover:text-primary transition-colors" data-cursor-hover="true">.connect</Link>
       </div>
     </>
   );
