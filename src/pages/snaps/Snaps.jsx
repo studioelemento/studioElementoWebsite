@@ -173,7 +173,7 @@ const Snaps = () => {
           {/* Vertical Scroll/Timeline Indicator */}
           <div ref={trackRef} className="w-[2px] bg-gray-200 absolute right-0 top-4 bottom-0 hidden md:block">
             <div 
-              className={`absolute right-[-3px] w-[8px] h-8 bg-[#1cd2a3] rounded-full transition-all duration-75 ease-out cursor-pointer ${isDragging ? 'scale-110 shadow-lg' : ''}`}
+              className={`absolute right-[-3px] w-[8px] h-8 bg-primary rounded-full transition-all duration-75 ease-out cursor-pointer ${isDragging ? 'scale-110 shadow-lg' : ''}`}
               style={{ top: `calc(${scrollProgress}% - ${scrollProgress === 100 ? '32px' : '0px'})` }}
               onMouseDown={handleMouseDown}
             ></div>

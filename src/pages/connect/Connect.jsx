@@ -27,19 +27,19 @@ const Connect = () => {
               </p>
               <p className="font-medium tracking-tight">
                 We support brands from their birth to their growth to their<br className="hidden md:block"/>development to their functioning to their strategies....<br/>
-                So in short, <span className="text-[#1cd2a3] font-bold">we develop your thoughts and ideas into products.</span>
+                So in short, <span className="text-primary font-bold">we develop your thoughts and ideas into products.</span>
               </p>
               
               <p className="text-[14px] md:text-[16px] italic text-black font-medium pt-2">
                 PS: if you haven't seen our works (which is highly unlikely),<br className="hidden md:block"/>
-                please do check them out in <span className="text-[#1cd2a3] font-bold">.thedotfolio</span>
+                please do check them out in <span className="text-primary font-bold">.thedotfolio</span>
               </p>
             </div>
 
             <div className="text-[16px] md:text-[20px] text-black mb-12">
               <p className="font-medium tracking-tight">
-                So shall we <span className="text-[#1cd2a3] font-bold">connect@studioelemento.in</span><br/>
-                Or call/WhatsApp us on <span className="text-[#1cd2a3] font-bold">+91 9544 00 8225</span>
+                So shall we <span className="text-primary font-bold">connect@studioelemento.in</span><br/>
+                Or call/WhatsApp us on <span className="text-primary font-bold">+91 9544 00 8225</span>
               </p>
             </div>
 
@@ -123,7 +123,7 @@ const Connect = () => {
 
           {/* Vertical Scroll/Timeline Indicator */}
           <div className="w-[2px] bg-gray-200 absolute right-0 top-4 bottom-0 hidden md:block">
-            <div className="absolute top-0 right-[-3px] w-[8px] h-8 bg-[#1cd2a3] rounded-full"></div>
+            <div className="absolute top-0 right-[-3px] w-[8px] h-8 bg-primary rounded-full"></div>
           </div>
 
         </div>

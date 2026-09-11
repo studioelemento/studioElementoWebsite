@@ -60,7 +60,7 @@ const CareersListSection = () => {
             If you feel so and believe you can contribute to our vision,<br className="hidden md:block" />
             send your portfolios to us and lets have a chat!
           </p>
-          <a href="mailto:join@studioelemento.in" className="text-[18px] md:text-[26px] text-[#1cd2a3] font-normal hover:opacity-80 transition-opacity tracking-tight">
+          <a href="mailto:join@studioelemento.in" className="text-[18px] md:text-[26px] text-primary font-normal hover:opacity-80 transition-opacity tracking-tight">
             join@studioelemento.in
           </a>
         </div>
@@ -87,7 +87,7 @@ const CareersListSection = () => {
               className="w-full border-[2px] md:border-[3px] border-gray-200 rounded-[14px] md:rounded-[20px] py-[16px] md:py-[22px] pl-[16px] sm:pl-[120px] md:pl-[150px] pr-12 md:pr-14 text-[14px] md:text-[16px] font-bold focus:outline-none focus:border-gray-300 transition-colors text-black placeholder:text-black placeholder:font-bold"
             />
             <svg 
-              className="absolute right-[16px] md:right-[65px] top-1/2 -translate-y-1/2 w-[20px] h-[20px] md:w-[26px] md:h-[26px] text-[#1cd2a3]" 
+              className="absolute right-[16px] md:right-[65px] top-1/2 -translate-y-1/2 w-[20px] h-[20px] md:w-[26px] md:h-[26px] text-primary" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -105,7 +105,7 @@ const CareersListSection = () => {
                     <span className="text-[12px] md:text-[14px] text-gray-800 font-medium tracking-tight">{job.location} | {job.type}</span>
                     <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto mt-2 sm:mt-0">
                       <h3 className="font-bold text-[12px] md:text-[13px] tracking-wide uppercase text-black">{job.title}</h3>
-                      <svg className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] text-[#1cd2a3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
                       </svg>
                     </div>
@@ -122,7 +122,7 @@ const CareersListSection = () => {
 
             {/* Vertical Scroll/Timeline Indicator */}
             <div className="w-[2px] bg-gray-200 absolute right-0 top-0 bottom-0 hidden md:block">
-              <div className="absolute top-[10px] right-[-3px] w-[8px] h-8 bg-[#1cd2a3] rounded-full"></div>
+              <div className="absolute top-[10px] right-[-3px] w-[8px] h-8 bg-primary rounded-full"></div>
             </div>
           </div>
           

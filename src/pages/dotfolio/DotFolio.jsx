@@ -21,7 +21,7 @@ const DotFolio = () => {
       <ContactSection />
       {/* <ExchangeSection /> */}
       {/* <LatestNewsSection /> */}
-      <FooterSection />
+      {/* <FooterSection /> */}
     </>
   );
 };
