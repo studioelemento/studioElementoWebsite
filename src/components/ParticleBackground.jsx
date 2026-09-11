@@ -19,7 +19,7 @@ const ParticleMesh = () => {
     const positions = new Float32Array(numPoints * 3);
     const colors = new Float32Array(numPoints * 3);
     
-    const colorBase = new THREE.Color('#ff5500');
+    const colorBase = new THREE.Color('#e86a27');
     
     let index = 0;
     for (let i = 0; i < gridX; i++) {
