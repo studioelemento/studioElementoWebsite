@@ -8,6 +8,9 @@ import ExchangeSection from "./components/ExchangeSection";
 import LatestNewsSection from "./components/LatestNewsSection";
 import FooterSection from "./components/FooterSection";
 import useScrollReveal from "../../hooks/useScrollReveal";
+import Footer from "../../components/Footer";
+
+import BrandLogosMarquee from "./components/BrandLogosMarquee";
 
 const DotFolio = () => {
   useScrollReveal();
@@ -18,10 +21,12 @@ const DotFolio = () => {
       <HeroSection />
       <AgencyIntroSection />
       <WorkGridSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
       {/* <ExchangeSection /> */}
       {/* <LatestNewsSection /> */}
       {/* <FooterSection /> */}
+      <BrandLogosMarquee />
+      <Footer />
     </>
   );
 };

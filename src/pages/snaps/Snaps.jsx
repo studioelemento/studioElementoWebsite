@@ -5,13 +5,15 @@ import Footer from "../../components/Footer";
 const Snaps = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const containerRef = useRef(null);
 
-  // Dynamically load all images from the snap folder using Vite's import.meta.glob
-  const snapImages = useMemo(() => {
+  const [snapImages, setSnapImages] = useState([]);
+
+  // Dynamically load and shuffle images on mount
+  useEffect(() => {
     const images = import.meta.glob("../../assets/snap/*.{png,jpg,jpeg,webp,avif}", { eager: true });
     
-    // Convert to an array and optionally shuffle for a random collage feel
     let imgArray = Object.values(images).map((mod, index) => ({
       id: index,
       src: mod.default || mod,
@@ -24,7 +26,7 @@ const Snaps = () => {
       [imgArray[i], imgArray[j]] = [imgArray[j], imgArray[i]];
     }
 
-    return imgArray;
+    setSnapImages(imgArray);
   }, []);
 
   // Handle scroll to move the green indicator
@@ -113,8 +115,7 @@ const Snaps = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-
-      <main className="bg-white text-black py-24 px-6 md:px-8">
+      <main className="bg-white text-black pt-8 pb-24 md:pt-12 px-6 md:px-8">
         
         {/* Main Content Area (Restricted Width exactly like the reference design) */}
         <div ref={containerRef} className="max-w-[990px] mx-auto relative pr-0 md:pr-16 w-full flex flex-col">
@@ -142,7 +143,8 @@ const Snaps = () => {
             {snapImages.map((snap) => (
               <div 
                 key={snap.id} 
-                className="break-inside-avoid relative overflow-hidden rounded-[14px] md:rounded-[20px] group cursor-pointer"
+                className="break-inside-avoid relative overflow-hidden rounded-[14px] md:rounded-[20px] group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300"
+                onClick={() => setSelectedImage(snap)}
               >
                 <img 
                   src={snap.src} 
@@ -180,8 +182,38 @@ const Snaps = () => {
           </div>
 
         </div>
-
       </main>
+      
+      {/* Lightbox / Modal Overlay */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-10 cursor-zoom-out opacity-100 transition-opacity duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          {/* Close button top right */}
+          <button 
+            className="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-gray-300 transition-colors z-[210] p-2 bg-black/40 hover:bg-black/60 rounded-full"
+            onClick={(e) => { e.stopPropagation(); setSelectedImage(null); }}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          {/* Image Container */}
+          <div 
+            className="relative max-w-5xl max-h-[90vh] w-auto cursor-default transform transition-transform duration-300 scale-100"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={selectedImage.src} 
+              alt={selectedImage.alt} 
+              className="max-h-[85vh] w-auto object-contain rounded-[16px] md:rounded-[24px] shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
+
       <Footer />
     </div>
   );

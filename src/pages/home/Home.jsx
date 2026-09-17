@@ -55,7 +55,7 @@ const Home = () => {
           
           <div className="w-full flex justify-center md:justify-start">
             <div className="font-bold text-[15px] md:text-[15px] text-black mb-6 tracking-wide text-center md:text-left">
-              check out what we have done <span className="hidden md:inline text-primary">#thedotfolio</span>
+              check out what we have done <Link to="/thedotfolio" className="hidden md:inline text-primary hover:underline pointer-events-auto">#thedotfolio</Link>
             </div>
           </div>
         </div>

@@ -168,17 +168,6 @@ function WorkSection({ section }) {
 export default function AlternatingWorkGrid() {
   return (
     <section id="work" className="relative bg-white" aria-label="Our work">
-      {/* Marquee strip */}
-      <div className="overflow-hidden bg-[#d9ef57] py-4 text-black">
-        <div className="marquee-track">
-          {Array(6).fill("Brand · Design · Strategy · Identity · Experience · Innovation · ").map((t, i) => (
-            <span key={i} className="text-sm font-black uppercase tracking-widest px-8 whitespace-nowrap">
-              {t}
-            </span>
-          ))}
-        </div>
-      </div>
-
       <div className="flex flex-col gap-4">
         {sections.map((section, index) => (
           <WorkSection key={index} section={section} />
