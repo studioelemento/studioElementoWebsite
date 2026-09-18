@@ -103,7 +103,7 @@ function Card({ project, featured }) {
   return (
     <a
       href="#"
-      className="group relative h-full overflow-hidden bg-black block rounded-2xl"
+      className="group relative h-full w-full overflow-hidden bg-black block rounded-2xl"
       aria-label={`View project: ${project.title} — ${project.brand}`}
     >
       <img
@@ -112,7 +112,7 @@ function Card({ project, featured }) {
         loading="lazy"
         className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" aria-hidden="true" />
 
       {/* Hover overlay */}
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
@@ -124,12 +124,12 @@ function Card({ project, featured }) {
       <div className="absolute bottom-0 left-0 z-10 p-5 md:p-8">
         <h3
           className={`font-bold leading-tight text-white ${
-            featured ? "max-w-2xl text-4xl md:text-5xl" : "text-2xl md:text-3xl"
+            featured ? "max-w-2xl text-3xl md:text-5xl" : "text-xl md:text-3xl"
           }`}
         >
           {project.title}
         </h3>
-        <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-[#d9ef57]">
+        <p className="mt-2 text-[12px] md:text-sm font-semibold uppercase tracking-wide text-[#d9ef57]">
           {project.brand}
         </p>
       </div>
@@ -143,20 +143,23 @@ function Card({ project, featured }) {
 
 function WorkSection({ section }) {
   return (
-    <div className="flex flex-row md:grid md:grid-cols-2 gap-4 md:gap-4 min-h-[60vh] md:min-h-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar md:overflow-visible">
+    <div className="flex flex-row md:grid md:grid-cols-2 gap-4 md:gap-4 md:min-h-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar md:overflow-visible px-6 md:px-0 scroll-pl-6">
       {/* Featured Card */}
-      <div className={`${section.reverse ? "md:order-2" : ""} flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto h-[60vh] md:h-[100vh] snap-center md:snap-align-none reveal-left`}>
+      <div className={`${section.reverse ? "md:order-2" : ""} flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto aspect-[4/5] md:aspect-auto md:h-[100vh] snap-start md:snap-align-none reveal-left`}>
         <Card project={section.featured} featured />
       </div>
       
       {/* 4 Sub-Cards */}
       <div className={`contents md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4 md:h-[100vh] ${section.reverse ? "md:order-1" : ""}`}>
         {section.items.map((item, index) => (
-          <div key={index} className={`flex-shrink-0 w-[85vw] sm:w-[50vw] md:w-auto h-[60vh] md:h-full snap-center md:snap-align-none reveal delay-${(index + 1) * 100}`}>
+          <div key={index} className={`flex-shrink-0 w-[85vw] sm:w-[50vw] md:w-auto aspect-[4/5] md:aspect-auto md:h-full snap-start md:snap-align-none reveal delay-${(index + 1) * 100}`}>
             <Card project={item} />
           </div>
         ))}
       </div>
+      
+      {/* Spacer to ensure right padding is respected in scroll container on iOS/Safari */}
+      <div className="flex-shrink-0 w-2 md:hidden" aria-hidden="true"></div>
     </div>
   );
 }
@@ -167,8 +170,8 @@ function WorkSection({ section }) {
 
 export default function AlternatingWorkGrid() {
   return (
-    <section id="work" className="relative bg-white" aria-label="Our work">
-      <div className="flex flex-col gap-4">
+    <section id="work" className="relative bg-white overflow-hidden" aria-label="Our work">
+      <div className="flex flex-col gap-6 md:gap-4 py-8 md:py-0">
         {sections.map((section, index) => (
           <WorkSection key={index} section={section} />
         ))}

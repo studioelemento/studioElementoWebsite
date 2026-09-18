@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import "./index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/home/Home";
 import DotFolio from "./pages/dotfolio/DotFolio";
 import Careers from "./pages/careers/Careers";
@@ -9,9 +10,20 @@ import CustomCursor from "./components/CustomCursor";
 import ScrollProgress from "./components/ScrollProgress";
 import GlobalFloatingCTA from "./components/GlobalFloatingCTA";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       {/* Global Elements */}
       <CustomCursor />
       <Routes>

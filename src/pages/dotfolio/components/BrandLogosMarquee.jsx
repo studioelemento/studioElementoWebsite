@@ -17,9 +17,9 @@ const BrandLogosMarquee = () => {
   const scrollContent = [...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="bg-[#FAF9F6] py-16 overflow-hidden relative border-t border-black/5">
+    <section className="bg-[#FAF9F6] py-10 md:py-16 overflow-hidden relative border-t border-black/5">
       <div className="w-full overflow-hidden flex items-center relative">
-        <div className="marquee-track flex gap-16 px-12 items-center" style={{ animationDuration: '8s' }}>
+        <div className="marquee-track flex gap-8 md:gap-16 px-6 md:px-12 items-center" style={{ animationDuration: '8s' }}>
           {scrollContent.map((logo, index) => (
             <div 
               key={index} 
@@ -28,7 +28,7 @@ const BrandLogosMarquee = () => {
               <img 
                 src={logo.src} 
                 alt={`Brand Logo ${logo.id}`} 
-                className="h-30 w-auto object-contain"
+                className="h-16 md:h-24 w-auto object-contain"
               />
             </div>
           ))}
