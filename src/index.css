@@ -1,9 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #FF5A14;
-  --color-primary-hover: #e64d00;
+  --color-primary: var(--brand-primary);
+  --color-primary-hover: var(--brand-primary-hover);
   --font-sans: 'Roboto', sans-serif;
+}
+
+:root {
+  --brand-primary: #829600;
+  --brand-primary-hover: #6a7a00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand-primary: #ccda1d;
+    --brand-primary-hover: #a8b315;
+  }
+}
+
+.bg-black {
+  --brand-primary: #ccda1d;
+  --brand-primary-hover: #a8b315;
+}
+
+.bg-white {
+  --brand-primary: #829600;
+  --brand-primary-hover: #6a7a00;
 }
 
 /* ── Global Font ─────────────────────────── */
